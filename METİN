@@ -1,0 +1,218 @@
+!! ARITHMETIC & NUMERIC TYPES !! 
+
+#1) Inteğer * float type yaptığımız için sonuç float tipinde gelecektir
+ 3*3.5
+7.0/5
+#2) KALANI HESAPLAMA: // kullanınca, bölüm kısmını elde ederiz
+7//5
+#KALANI HESAPLAMA: % remainder kullanınca kalanı elde ederiz
+7%5
+#3) İşlem Önceliği
+-5**2
+(-5)**2
+
+!! VARIABLES !!
+#1) = kullanarak değişkenlere değer atayabiliriz.
+
+length=15
+width=3*5
+
+length*width
+
+#2) Python'da tanımsız bir değişken kullanınca, hata alırız"
+
+n
+
+tax = 11.3/100
+price = 19.95
+price*tax
+
+#3) round fonksiyonu
+#Floating veri türünü 2 ya da daha az ondalık ile belirtmek için
+
+round(price*tax)
+
+#4) Tek bir satırda birden fazla değişken tanımlayabiliriz
+
+a,b,c = 3.2,1,6
+a,b,c
+
+ # !! EXPRESSIONS !!
+#1) Kıyaslamak için herhangi bir kısıtlama yok
+
+a,b,c = 1,2,3
+a<b<c
+
+"2) Karşılaştırma için built-in fonksiyonları da kullanabiliriz"
+
+min(3,2.4,5)
+
+max(3,2.4,5)
+
+# 3) Karşılaştırma ifadelerini birleşik formatta.AND / OR / NOT
+
+1<2 and 2<3 
+
+1<2 or 1>2
+
+not(2<3)
+
+# !! STRING BASICS !!
+# Gösterim için ('') ya da ("") kullanılır. 
+
+'Hi guyzz :)'
+
+#1) kesme ve tırnak işareti karışabilir
+"Kesme işareti için backslash ('') kullanılır"
+
+"doesn't"
+
+#2) String ifadeleri birleştirmek
+
+'Py' 'thon'
+
+#3) String ve değişken birleştirmek için + kullanılır
+
+a = 'Py'
+a + 'thon'
+
+                    # !! STRING INDEXING !!
+#1) String ifadeler için indexleme kullanabiliriz.
+word = 'Python'
+word [0]  #Dizinin ilk karakterinin indexi 0.
+
+word [5]
+
+# !NOT: İndex negatif bir sayı da olabilir.
+# Bu durumda index hesaplaması için, karakterleri saymaya sondan başlarız.
+
+#Örn: Önceki örnekter kelimenin son harfi 'n'. Bunu farklı bi şekilde nasıl
+#elde ederiz
+
+word[-1]
+
+# !! Saymaya sondan başladığımız için index kısmına 
+#'-2' yazmamız sondan ikinci karakteri istediğimizi gösterir
+
+word[-2]
+
+#2) Ek olarak, string ifadenin belirli bir kısmını da elde edebiliriz.
+    #Bunun için yapmamız gereken başlangıç ve bitişi olan bir aralık belirtm
+    # !!! Burda dikkat edilmesi gereken nokta:
+    # Başlangıç değeri böleceğimiz ifadeye dahil edilirken, 
+    # bitiş değeri dahil edilmez. Önceki örnek üzerinden ilerleyelim
+word[0:2] # 0.karakter(included) 2.karakter(excluded)
+
+word[2:5] #2.karakter(included) 5.karakter(excluded)
+
+                    # !! LISTS !!
+# Veri türlerinden biri de listeler. 
+# 1) Listeyi, virgülle ayrılmış değerler ya da köşeli parantez içindeki ögeler
+  # olarak düşünebiliriz.
+squares = [1,4,9,16,25]
+squares
+
+# 2) Liste için de karakter bulma (indexing) yapmak mümkün
+squares[0]
+
+#3) Listede belirli bir aralığı ayırdığımız zaman, yeni bir
+  #liste oluşturmuş oluruz
+squares = [1,4,9,16,25]
+squares[-3:] #sondan 3.karakter:9. 9 ve sonraki karakterleri içeren yeni lis
+
+# 4) Stringlerde yaptığımız gibi listeleri de birleştirebiliriz
+squares = [1,4,9,16,25]
+squares +[36,49,64]
+
+# !! TUPPLES !!
+#Python'da başka bir veri türü de tuples (demet) 
+#Bu veri türü, değişmeyen bir veri türüdür. İçerisindeki ögeleri değiştirmey
+ #denediğimizde hata ile karşılaşırız
+# Liste veri türüne benzer , farklı olarak () ile gösterilir.
+
+t = (1,2,3)
+t
+
+# t içerisinde değişiklik yapmayı deneyelim
+t[1] = 2.0
+
+# 1) Tupple içerisindeki ögeleri bölmek mümkün.
+# Önceki örnekte sadece 1 ve 2 yi yazdıralım
+
+t[:2]
+
+# 2) Bir listeden tupple oluşturabilliriz. Şu şekilde
+l = ['a','b','c'] # 'l' liste formatında
+l = tuple(l)
+l
+
+# 3) Benzer şekilde bir tupple'dan liste oluşturmak da mümkün.
+# Önceki örnekte l'yi tekrar liste yapalım:
+l = list(l)
+l
+
+# 4) Aynı zamanda yazdığımız kod içerisinde verilerin listeye ya da tupple'a
+  #dahil olduğunu da kontrol edebiliriz
+tup = ('a','b','c')
+'b' in tup
+
+#Benzer şekilde verinin listeye ya da tupple'a dahil olmadığına bakmak 
+#da mümkün.
+#Bunun için not in kullanmak yeterli olacaktır
+lis = ['a','b','c']
+'a' not in lis
+
+                    # !! DICTIONARIES !!
+#Dictionary yapıları anahtarlar(unique keys) ve değerler(values) arasında
+ #eleştirme yapabilmemizi sağlar. () içerisinde anahtar-değer çifti 
+ #listeleyerek dictionary oluşturabiliriz. Dictionary adı da {} içerisinde
+capitals = {'France': ('Paris',2140526)}
+capitals
+
+# 1)!!!! Dictionary anahtarları değişmez veri türünde olmalıdır.
+ #String,sayı,tupple gibi
+ # Örn: Liste değişken olduğu için dictionary anahtarı olamaz.
+# 2) Dictionaryde ekleme yapabilmek mümkün.Önceki örneğe ekleme yapalım
+ #Anahtar : Nigeria olsun. Değer de farklı bir sayı olsun
+capitals['Nigeria'] = ('Lagos', 6048430)
+capitals
+
+ # !! LIST COMPREHENSION !!
+#List comprehension mantığına bakalım.
+#Bu mantık temel oalrak algoritmik bir liste oluşturmaya dayanır.
+#Python'da sıklıkla kullanılır çünkü, listelerin oluşturulmasında hızlı bir
+ #alternatif sağlar.
+    
+# 1)ÖRn olaraak: sadece 1den 11e kadr olan sayılarn listesini oluşturmak
+ #istedik. Tek tek yazmak yerine burda list comprehension mantığnı
+ #kullanabiliriz
+
+numbers = [x for x in range(1,11)]
+numbers
+
+
+# 2)List comprehensionda mantıksal test yapabilmek de mümkün
+# ÖRn:Önceki örnekte x'in 2ye bölümünden kalan 0 değilse, o x değerinin
+ #karesini yazdıran bi örnek yapalım
+
+odd_squares = [x*x for x in range(1,11) if x%2 != 0]
+odd_squares
+
+# !! IMPORTING MODULES !!
+# 1)Python'da tanımların yerleştirildiği dosyalara 'Python module' denir.
+# 2)Örn: 'factorial()' fonksiyony yerleşik olarak bulunan standard fonk 
+ #değil.
+ # Matematik modülünün bir parçası.!!! Bu yüzden, matematik modülünü import
+ # etmeden önce factorial() fonksiyonunu çalıştırırsak hata alırız
+
+factorial(5)
+
+import math
+math.factorial(5)
+
+# 3)Bu örneği şu şekilde de yazdırabiliriz
+from math import factorial
+factorial(5) 
+ #!!!! Modülün ismini ilk olarak 'from math' şeklinde belirttiğimiz için
+ # faktöriyel hesabında tekrardan matematik modülünün ismini belirtmemize
+ # gerek kalmadı.
